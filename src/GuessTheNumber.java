@@ -18,7 +18,7 @@ public class GuessTheNumber {
 
             Random rand = new Random();
             int number= rand.nextInt(20)+1;
-            System.out.println(number);
+            //System.out.println(number);
 
             int tries =1;
 
@@ -26,6 +26,8 @@ public class GuessTheNumber {
                 if(guess == number){
                     System.out.println(" Good job, "+ name +"! You guessed my number in " + tries + " guesses!");
                     break;
+                } else if (guess >20 || guess <1) {
+                    throw new IllegalArgumentException("Caught Exception: invalid Input, Must be between 1 and 20");
                 } else if (guess <number) {
                     System.out.println("Your guess is too low. Try Again");
                     tries++;
